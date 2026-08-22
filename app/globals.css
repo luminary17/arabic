@@ -34,3 +34,5 @@
 .vocab-table tr{border-radius:18px;overflow:hidden}.vocab-table tr:hover{box-shadow:0 12px 28px rgba(24,59,54,.13)}.arabic-entry{border-radius:10px}.example-ar button,.selected-table .example-ar button{border-radius:9px}.selected-entry{border-radius:20px;overflow:hidden;box-shadow:0 16px 36px rgba(24,59,54,.14)}.selected-title button{border-radius:10px}.vocab-search{border-radius:16px}
 
 .vocab-table tr{min-height:285px}.vocab-table td:nth-child(5){background:#f1f6f3!important;border-radius:12px;padding:11px;margin-top:16px}.vocab-table td:nth-child(6){background:#faf7ef!important;border-radius:10px;padding:9px 11px;margin-top:7px;color:#4f605b;font-size:12px}.example-label{display:block;width:100%;font-family:"DM Sans",sans-serif;font-size:9px;line-height:1;text-transform:uppercase;letter-spacing:1.1px;font-weight:700;color:var(--coral);margin-bottom:8px;text-align:left}.example-ar{align-items:center}.example-translation .example-label{margin-bottom:5px}
+
+.arabic-answers button{font:700 32px "Noto Naskh Arabic";direction:rtl}
