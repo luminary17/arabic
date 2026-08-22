@@ -29,3 +29,6 @@
 @media(max-width:1050px){.vocab-table tbody{grid-template-columns:repeat(3,minmax(0,1fr))}}
 @media(max-width:760px){.vocab-table tbody{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:460px){.vocab-table tbody{grid-template-columns:1fr}.vocab-table tr{min-height:210px}}
+
+/* Rounded rectangular vocabulary tiles. */
+.vocab-table tr{border-radius:18px;overflow:hidden}.vocab-table tr:hover{box-shadow:0 12px 28px rgba(24,59,54,.13)}.arabic-entry{border-radius:10px}.example-ar button,.selected-table .example-ar button{border-radius:9px}.selected-entry{border-radius:20px;overflow:hidden;box-shadow:0 16px 36px rgba(24,59,54,.14)}.selected-title button{border-radius:10px}.vocab-search{border-radius:16px}
