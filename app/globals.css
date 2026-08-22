@@ -37,3 +37,4 @@
 
 .arabic-answers button{font:700 32px "Noto Naskh Arabic";direction:rtl}
 .word-answers button{height:auto;min-height:78px;padding:12px 16px;font-size:23px;line-height:1.45}
+.level-picker{max-width:840px;margin:25px auto 8px;display:flex;gap:8px;overflow-x:auto;padding:4px}.level-picker button{min-width:112px;border:1px solid var(--line);background:#fff;border-radius:12px;padding:9px 12px;cursor:pointer;color:#667873}.level-picker button span{display:block;font-size:9px;font-weight:700;letter-spacing:1px}.level-picker button strong{display:block;margin-top:4px;font:600 16px "Noto Naskh Arabic"}.level-picker button.active{background:var(--green);border-color:var(--green);color:#fff}.level-badge{display:inline-block;background:var(--mint);color:var(--green);border-radius:20px;padding:6px 12px;font-size:10px;font-weight:700;letter-spacing:1px}.quiz-card .level-badge+.number{margin-top:2px}
