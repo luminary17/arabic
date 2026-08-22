@@ -1,0 +1,3 @@
+import type {Metadata} from "next";import "./globals.css";
+export const metadata:Metadata={title:"Natiq — Learn Arabic in Context",description:"Connected Arabic vocabulary and number practice for English, Russian and Uzbek speakers.",openGraph:{title:"Natiq — Learn Arabic in Context",description:"Make Arabic feel familiar through connected vocabulary and number practice.",images:["/og.png"]},twitter:{card:"summary_large_image",title:"Natiq — Learn Arabic in Context",description:"Make Arabic feel familiar through connected vocabulary and number practice.",images:["/og.png"]}};
+export default function RootLayout({children}:{children:React.ReactNode}){return <html lang="en"><body>{children}</body></html>}
