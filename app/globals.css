@@ -73,4 +73,13 @@ html{scroll-behavior:smooth}body{line-height:1.55}.topbar{box-shadow:0 4px 22px 
 .book-theme-2 .transcribed-page .page-number{display:block;color:#327d91;margin-bottom:8px}
 .book-theme-2 .transcribed-page h3{font-size:clamp(24px,3vw,32px);color:#327d91}
 @media(max-width:650px){.book-theme-0 .transcribed-page,.book-theme-1 .transcribed-page,.book-theme-2 .transcribed-page{min-height:auto;padding:26px 20px}.book-theme-1 .transcribed-pages{padding:10px}.book-theme-0 .book-reader-head h2[lang="ar"]{font-size:35px}}
+.source-book-pages{gap:22px}
+.source-scan-page{padding:0!important;min-height:0!important;background:transparent!important;border:0!important;border-radius:0!important;box-shadow:none!important;overflow:hidden}
+.source-page-image{margin:0 auto;max-width:1000px;background:#fff}
+.source-page-image a{display:block;cursor:zoom-in}
+.source-page-image img{display:block;width:100%;height:auto;background:#fff;box-shadow:0 8px 30px rgba(35,35,25,.12)}
+.source-page-transcript{max-width:1000px;margin:8px auto 0;background:#fff;border:1px solid var(--line);border-radius:12px;padding:12px 18px;font:500 19px/2 "Noto Naskh Arabic",serif}
+.source-page-transcript summary{cursor:pointer;color:var(--green);font:600 14px/1.6 "DM Sans",sans-serif}
+.source-page-transcript h3{font:700 25px/1.8 "Noto Naskh Arabic",serif}
+.source-page-transcript p{margin:0 0 12px}
 
