@@ -267,6 +267,13 @@ export const verbs:Record<string,Verb[]>={
 وَجَدَ|يَجِدُ|جِدْ|وُجُودٌ|find|находить|topmoq
 فَتَحَ|يَفْتَحُ|اِفْتَحْ|فَتْحٌ|open|открывать|ochmoq
 أَغْلَقَ|يُغْلِقُ|أَغْلِقْ|إِغْلَاقٌ|close|закрывать|yopmoq
-حَاسَبَ|يُحَاسِبُ|حَاسِبْ|مُحَاسَبَةٌ|settle the bill|рассчитываться|hisob-kitob qilmoq`)
+حَاسَبَ|يُحَاسِبُ|حَاسِبْ|مُحَاسَبَةٌ|settle the bill|рассчитываться|hisob-kitob qilmoq`),
+"13":parseVerbs(`قَضَى|يَقْضِي|اِقْضِ|قَضَاءٌ|spend (time)|проводить (время)|vaqt o‘tkazmoq
+اِعْتَمَرَ|يَعْتَمِرُ|اِعْتَمِرْ|اِعْتِمَارٌ|perform Umrah|совершать умру|umra qilmoq
+صَامَ|يَصُومُ|صُمْ|صَوْمٌ / صِيَامٌ|fast|поститься|ro‘za tutmoq
+أَفْطَرَ|يُفْطِرُ|أَفْطِرْ|إِفْطَارٌ|break the fast|разговляться|og‘iz ochmoq
+حَجَّ|يَحُجُّ|حُجَّ|حَجٌّ|perform Hajj|совершать хадж|haj qilmoq
+طَافَ|يَطُوفُ|طُفْ|طَوَافٌ|circle the Kaaba|обходить Каабу|Ka’bani aylanmoq
+شَعَرَ|يَشْعُرُ|اُشْعُرْ|شُعُورٌ|feel|чувствовать|his qilmoq`)
 };
 

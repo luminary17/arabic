@@ -1,8 +1,8 @@
 "use client";
 import {useMemo,useState} from "react";
 import VocabApp from "./vocab-app";
-type Lang="en"|"ru"|"uz"; type Word={ar:string,en:string,ru:string,uz:string};
-const w=(ar:string,en:string,ru:string,uz:string):Word=>({ar,en,ru,uz});
+type Lang="en"|"ru"|"uz"; type Word={ar:string,en:string,ru:string,uz:string,exampleAr?:string,exampleEn?:string};
+const w=(ar:string,en:string,ru:string,uz:string,exampleAr?:string,exampleEn?:string):Word=>({ar,en,ru,uz,exampleAr,exampleEn});
 const units=[
  {number:"09",ar:"التَّسَوُّقُ",en:"Shopping",ru:"Покупки",uz:"Xarid qilish",tone:"coral",words:[
   w("مَعْجَمٌ","dictionary","словарь","lug‘at"),w("دَفْتَرٌ","notebook","тетрадь","daftar"),w("قَلَمٌ","pen","ручка","ruchka"),w("كِتَابٌ","book","книга","kitob"),w("كِتَابُ الْقِرَاءَةِ","reading book","книга для чтения","o‘qish kitobi"),w("كِتَابُ الْقَوَاعِدِ","grammar book","учебник грамматики","grammatika kitobi"),w("كِتَابُ الْعُلُومِ","science book","учебник естествознания","tabiiy fanlar kitobi"),w("رِيَالٌ","riyal","риал","riyal"),w("دِينَارٌ","dinar","динар","dinor"),w("تَفَضَّلْ","here you are","возьмите","marhamat"),w("يَقُولُ","he says","он говорит","u aytadi"),w("ثَلَاثُونَ","thirty","тридцать","o‘ttiz"),w("ثَمَانُونَ","eighty","восемьдесят","sakson"),w("عِلْبَةُ مِلْحٍ","box of salt","коробка соли","bir quti tuz"),w("طَبَقُ بَيْضٍ","plate of eggs","тарелка яиц","bir likop tuxum"),w("خِيَارٌ","cucumber","огурец","bodring"),w("بَصَلٌ","onion","лук","piyoz"),w("طَمَاطِمُ","tomatoes","помидоры","pomidor"),w("سُكَّرٌ","sugar","сахар","shakar"),w("بُنٌّ","coffee beans","кофейные зёрна","qahva doni"),w("امْرَأَةٌ","woman","женщина","ayol"),w("قَمِيصٌ","shirt","рубашка","ko‘ylak"),w("قَمِيصَانِ","two shirts","две рубашки","ikki ko‘ylak"),w("قُمُصٌ","shirts","рубашки","ko‘ylaklar"),w("ثَوْبٌ","robe","одежда","to‘n"),w("أَثْوَابٌ","robes","одежды","to‘nlar"),w("مِعْطَفٌ","coat","пальто","palto"),w("يَشْتَرِي","he buys","он покупает","u sotib oladi"),w("قِسْمٌ","department","отдел","bo‘lim"),w("الْمُشْتَرِي","customer","покупатель","xaridor"),w("هُنَا","here","здесь","bu yerda"),w("أَبْيَضُ","white","белый","oq"),w("أَسْوَدُ","black","чёрный","qora"),w("أَخْضَرُ","green","зелёный","yashil"),w("أَحْمَرُ","red","красный","qizil"),w("أَصْفَرُ","yellow","жёлтый","sariq"),w("أَزْرَقُ","blue","синий","ko‘k"),w("طَوِيلٌ","long / tall","длинный / высокий","uzun / baland"),w("قَصِيرٌ","short","короткий / низкий","qisqa / past"),w("فَاكِهَةٌ","fruit","фрукты","meva"),w("وَجْبَةُ الْفُطُورِ","breakfast","завтрак","nonushta"),w("نَظَّارَةٌ","glasses","очки","ko‘zoynak"),w("فُرْنٌ","oven","духовка","pech"),w("مُنَبِّهٌ","alarm clock","будильник","budilnik")]},
@@ -18,6 +18,43 @@ const units=[
   w("فَقَدَ","he lost","он потерял","u yo‘qotdi"),w("يَفْقِدُ","he loses","он теряет","u yo‘qotadi"),w("اِفْقِدْ","lose!","потеряй!","yo‘qot!"),w("فَقْدٌ","loss","потеря","yo‘qotish"),
   w("فَتَحَ","he opened","он открыл","u ochdi"),w("يَفْتَحُ","he opens","он открывает","u ochadi"),w("اِفْتَحْ","open!","открой!","och!"),w("فَتْحٌ","opening","открытие","ochish"),
   w("أَغْلَقَ","he closed","он закрыл","u yopdi"),w("يُغْلِقُ","he closes","он закрывает","u yopadi"),w("أَغْلِقْ","close!","закрой!","yop!"),w("غَلْقٌ","closing","закрытие","yopish")
+ ]},
+ {number:"13",ar:"الْحَجُّ وَالْعُمْرَةُ",en:"Hajj & Umrah",ru:"Хадж и умра",uz:"Haj va umra",tone:"gold",words:[
+  w("الْحَجُّ","Hajj","хадж","haj","يَذْهَبُ الْحُجَّاجُ إِلَى مَكَّةَ لِلْحَجِّ.","Pilgrims go to Mecca for Hajj."),
+  w("الْعُمْرَةُ","Umrah","умра","umra","أَدَّتْ أُسْرَتِي الْعُمْرَةَ.","My family performed Umrah."),
+  w("عُمْرَةٌ","one Umrah","одна умра","bir umra","هٰذِهِ عُمْرَةٌ مُبَارَكَةٌ.","This is a blessed Umrah."),
+  w("عُمْرَاتٌ","Umrahs","умры","umralar","جَمْعُ عُمْرَةٍ هُوَ عُمْرَاتٌ.","The plural of Umrah is Umrahs."),
+  w("حَجَّةٌ","one Hajj pilgrimage","один хадж","bir haj","أَدَّى أَبِي حَجَّةً وَاحِدَةً.","My father performed Hajj once."),
+  w("حَجَّاتٌ","Hajj pilgrimages","хаджи (поездки)","haj safarlari","جَمْعُ حَجَّةٍ هُوَ حَجَّاتٌ.","The plural of one Hajj pilgrimage is Hajj pilgrimages."),
+  w("أَعْتَمِرُ","I perform Umrah","я совершаю умру","men umra qilaman","أَعْتَمِرُ مَعَ أُسْرَتِي.","I perform Umrah with my family."),
+  w("يَعْتَمِرُ","he performs Umrah","он совершает умру","u umra qiladi","يَعْتَمِرُ أَخِي فِي رَمَضَانَ.","My brother performs Umrah in Ramadan."),
+  w("يَصُومُ","he fasts","он постится","u ro‘za tutadi","يَصُومُ الْمُسْلِمُ فِي رَمَضَانَ.","A Muslim fasts in Ramadan."),
+  w("يُفْطِرُ","he breaks his fast","он разговляется","u og‘iz ochadi","يُفْطِرُ الصَّائِمُ عِنْدَ الْغُرُوبِ.","A fasting person breaks the fast at sunset."),
+  w("يَطُوفُ","he circles (the Kaaba)","он обходит Каабу","u Ka’bani aylanadi","يَطُوفُ الْحَاجُّ حَوْلَ الْكَعْبَةِ.","The pilgrim circles the Kaaba."),
+  w("يَشْعُرُ","he feels","он чувствует","u his qiladi","يَشْعُرُ الْحَاجُّ بِالسُّرُورِ.","The pilgrim feels joy."),
+  w("يَقْضِي","he spends (time)","он проводит (время)","u vaqt o‘tkazadi","يَقْضِي أَخِي الْعُطْلَةَ مَعَ أُسْرَتِهِ.","My brother spends the holiday with his family."),
+  w("كَيْفَ؟","how?","как?","qanday?","كَيْفَ تَذْهَبُ إِلَى مَكَّةَ؟","How do you go to Mecca?"),
+  w("يَا","O! (vocative particle)","о! (обращение)","ey! (undov)","يَا أَخِي، هَيَّا نَذْهَبْ.","O my brother, let us go."),
+  w("أَيَّامُ الْعِيدِ","days of Eid","дни праздника","hayit kunlari","يَفْرَحُ الْأَطْفَالُ فِي أَيَّامِ الْعِيدِ.","Children rejoice during Eid."),
+  w("سُرُورٌ","joy","радость","quvonch","أَشْعُرُ بِسُرُورٍ كَبِيرٍ.","I feel great joy."),
+  w("حَوْلَ","around","вокруг","atrofida","نَطُوفُ حَوْلَ الْكَعْبَةِ.","We circle the Kaaba."),
+  w("مَقَامُ إِبْرَاهِيمَ","Station of Abraham","Макам Ибрахима","Maqomi Ibrohim","مَقَامُ إِبْرَاهِيمَ قُرْبَ الْكَعْبَةِ.","The Station of Abraham is near the Kaaba."),
+  w("أَشْوَاطٌ","rounds","круги","aylanishlar","فِي الطَّوَافِ سَبْعَةُ أَشْوَاطٍ.","There are seven rounds in tawaf."),
+  w("الْكَعْبَةُ","the Kaaba","Кааба","Ka’ba","الْكَعْبَةُ فِي مَكَّةَ الْمُكَرَّمَةِ.","The Kaaba is in Mecca."),
+  w("مَكَّةُ الْمُكَرَّمَةُ","Mecca","Мекка","Makka","أَزُورُ مَكَّةَ الْمُكَرَّمَةَ.","I visit Mecca."),
+  w("الْأُرْدُنُ","Jordan","Иордания","Iordaniya","جَاءَ حَاجٌّ مِنَ الْأُرْدُنِ.","A pilgrim came from Jordan."),
+  w("بَاكِسْتَانُ","Pakistan","Пакистан","Pokiston","جَاءَ حَاجٌّ مِنْ بَاكِسْتَانَ.","A pilgrim came from Pakistan."),
+  w("الْيَمَنُ","Yemen","Йемен","Yaman","جَاءَ حَاجٌّ مِنَ الْيَمَنِ.","A pilgrim came from Yemen."),
+  w("السُّودَانُ","Sudan","Судан","Sudan","جَاءَ حَاجٌّ مِنَ السُّودَانِ.","A pilgrim came from Sudan."),
+  w("الصِّيَامُ","fasting","пост","ro‘za tutish","الصِّيَامُ فِي الصَّيْفِ صَعْبٌ.","Fasting in summer is difficult."),
+  w("رَمَضَانُ","Ramadan","Рамадан","Ramazon","نَصُومُ فِي رَمَضَانَ.","We fast in Ramadan."),
+  w("الْإِفْطَارُ","breaking the fast","разговение","iftor","نَأْكُلُ التَّمْرَ عِنْدَ الْإِفْطَارِ.","We eat dates when breaking the fast."),
+  w("الْغُرُوبُ","sunset","закат","quyosh botishi","يُفْطِرُ الْمُسْلِمُ بَعْدَ الْغُرُوبِ.","A Muslim breaks the fast after sunset."),
+  w("الْإِحْرَامُ","ihram","ихрам","ehrom","يَلْبَسُ الْمُعْتَمِرُ ثِيَابَ الْإِحْرَامِ.","The Umrah pilgrim wears ihram clothes."),
+  w("الطَّوَافُ","tawaf (circling the Kaaba)","таваф (обход Каабы)","tavof (Ka’bani aylanish)","الطَّوَافُ حَوْلَ الْكَعْبَةِ.","Tawaf is performed around the Kaaba."),
+  w("شَوْطٌ","one round","один круг","bir aylanish","أَنْهَيْتُ شَوْطًا مِنَ الطَّوَافِ.","I completed one round of tawaf."),
+  w("الْحَاجُّ","Hajj pilgrim","паломник","haj ziyoratchisi","الْحَاجُّ يَطُوفُ حَوْلَ الْكَعْبَةِ.","The pilgrim circles the Kaaba."),
+  w("الْمُعْتَمِرُ","Umrah pilgrim","паломник умры","umra ziyoratchisi","الْمُعْتَمِرُ فِي مَكَّةَ.","The Umrah pilgrim is in Mecca.")
  ]}
 ];
 const copy={
